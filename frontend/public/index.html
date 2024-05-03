@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Clone</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Wordle Clone</h1>
+    </header>
+    <div id="content-box">
+        <div id="game-box">
+            <div id="game-row-1">
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+            </div>
+            <div id="game-row-2">
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+            </div>
+            <div id="game-row-3">
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+            </div>
+            <div id="game-row-4">
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+            </div>
+            <div id="game-row-5">
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+            </div>
+            <div id="game-row-6">
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+                <div class="guess-box"></div>
+            </div>
+        </div>
+        <div id="input-box">
+            <div id="keyboard-row-1">
+                <button class="keys" onclick="keyboardClick(this.value)" value="q">Q</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="w">W</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="e">E</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="r">R</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="t">T</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="y">Y</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="u">U</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="i">I</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="o">O</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="p">P</button>
+            </div>
+            <div id="keyboard-row-2">
+                <button class="keys" onclick="keyboardClick(this.value)" value="a">A</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="s">S</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="d">D</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="f">F</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="g">G</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="h">H</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="j">J</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="k">K</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="l">L</button>
+            </div>
+            <div id="keyboard-row-3">
+                <button class="keys-function enter-btn" value="enter">Enter</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="z">Z</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="x">X</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="c">C</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="v">V</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="b">B</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="n">N</button>
+                <button class="keys" onclick="keyboardClick(this.value)" value="m">M</button>
+                <button class="keys-function del-btn" value="delete">Del</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
