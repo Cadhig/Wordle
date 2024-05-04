@@ -3,6 +3,7 @@ const app = express()
 const port = 3000
 const getRandomWord = require('./randomWord.js')
 const checkGuess = require('./checkGuess.js')
+const checkLetters = require('./checkGuess.js')
 let retrievedWord = null
 
 app.use(express.json())
@@ -27,15 +28,20 @@ app.put('/api/guess', async (req, res) => {
     res.send(retrievedWord)
 })
 
-app.post('/api/guess', (req, res) => {
-    let userGuess = req.body
-    console.log(userGuess)
-    const checkGuessResult = checkGuess(retrievedWord, userGuess)
-    if (checkGuessResult == false) {
-        res.send('NOT OK')
-    } else {
-        res.send('OK')
+app.post('/api/guess', async (req, res) => {
+    if (retrievedWord === null) {
+        retrievedWord = await getRandomWord()
     }
+    let userGuess = req.body.guess
+    console.log(userGuess)
+    const checkGuessResult = checkLetters(retrievedWord, userGuess)
+    if (userGuess.split("").length !== 5) {
+        return res.send('NOT RIGHT LENGTH')
+    }
+    if (checkGuessResult == false) {
+        return res.send('NOT OK')
+    }
+    return res.send('OK')
 })
 
 app.listen(port, () => {
