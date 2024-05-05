@@ -34,14 +34,12 @@ app.post('/api/guess', async (req, res) => {
     }
     let userGuess = req.body.guess
     console.log(userGuess)
-    const checkGuessResult = checkLetters(retrievedWord, userGuess)
     if (userGuess.split("").length !== 5) {
         return res.send('NOT RIGHT LENGTH')
     }
-    if (checkGuessResult == false) {
-        return res.send('NOT OK')
-    }
-    return res.send('OK')
+    const checkGuessResult = checkLetters(retrievedWord, userGuess)
+    console.log(checkGuessResult)
+    res.send(checkGuessResult)
 })
 
 app.listen(port, () => {
