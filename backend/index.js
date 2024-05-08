@@ -37,7 +37,7 @@ app.post('/api/guess', async (req, res) => {
     }
     let userGuess = req.body.guess
     console.log(userGuess)
-    if (userGuess !== 5) {
+    if (userGuess.split("").length !== 5) {
         return res.send({
             "error": "NOT THE RIGHT LENGTH"
         })

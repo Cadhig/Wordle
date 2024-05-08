@@ -28,8 +28,14 @@ async function submitGuess() {
     if (stringifiedArray === null) {
         return
     }
+    if (guessArray > 5) {
+        return
+    }
     const response = await fetch(`${backEnd}/api/guess`, {
         method: "post",
+        headers: {
+            'content-type': 'application/json'
+        },
         body: JSON.stringify({
             guess: stringifiedArray
         })

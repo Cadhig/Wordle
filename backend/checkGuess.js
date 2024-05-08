@@ -9,10 +9,10 @@ function checkGuess(realWord, userGuess) {
 }
 
 function checkLetters(realWord, userGuess) {
-    const userCharacters = userGuess
+    const userCharacters = userGuess.split("")
     const realCharacters = realWord.toLowerCase().split("")
     let letterArray = []
-    for (let i = 0; i < userCharacters; i++) {
+    for (let i = 0; i < userCharacters.length; i++) {
         const currentLetter = userCharacters[i]
         const isLetterInWord = realCharacters.includes(currentLetter)
         const isLetterInPosition = userCharacters.indexOf(currentLetter) == realCharacters.indexOf(currentLetter)
