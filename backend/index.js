@@ -4,7 +4,10 @@ const port = 3000
 const getRandomWord = require('./randomWord.js')
 const checkGuess = require('./checkGuess.js')
 const checkLetters = require('./checkGuess.js')
+const cors = require('cors')
 let retrievedWord = null
+
+app.use(cors())
 
 app.use(express.json())
 
@@ -34,8 +37,10 @@ app.post('/api/guess', async (req, res) => {
     }
     let userGuess = req.body.guess
     console.log(userGuess)
-    if (userGuess.split("").length !== 5) {
-        return res.send('NOT RIGHT LENGTH')
+    if (userGuess !== 5) {
+        return res.send({
+            "error": "NOT THE RIGHT LENGTH"
+        })
     }
     const checkGuessResult = checkLetters(retrievedWord, userGuess)
     console.log(checkGuessResult)

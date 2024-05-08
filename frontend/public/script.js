@@ -1,22 +1,39 @@
 const backEnd = 'http://127.0.0.1:3000'
 
+let guessArray = []
+
 function keyboardClick(el) {
     console.log(el)
-    const display = document.querySelector('.guess-box')
-    display.textContent = el
+    const displayRow = document.querySelector('#game-row-1')
 
+    guessArray.push(el)
+    if (guessArray.length > 5) {
+        return
+    }
+    const displayLetter = document.createElement('p')
+    displayLetter.setAttribute('class', 'displayLetter')
+    displayRow.appendChild(displayLetter)
+    displayLetter.textContent = el
+    console.log(guessArray)
+}
+
+function deleteKey() {
+    guessArray.pop()
 }
 
 
-async function submitGuess(userGuess) {
-    if (userGuess === null) {
+async function submitGuess() {
+    const stringifiedArray = guessArray.join("")
+    console.log(stringifiedArray)
+    if (stringifiedArray === null) {
         return
     }
     const response = await fetch(`${backEnd}/api/guess`, {
         method: "post",
         body: JSON.stringify({
-            guess: userGuess
+            guess: stringifiedArray
         })
+
     }
     )
     const parsedResponse = await response.json()
