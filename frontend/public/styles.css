@@ -32,3 +32,21 @@
 #input-box {
     margin-top: 20px;
 }
+
+.greenBox {
+    background-color: green;
+    width: 3%;
+    height: 40px;
+}
+
+.yellowBox {
+    background-color: yellow;
+    width: 3%;
+    height: 40px;
+}
+
+.greyBox {
+    background-color: grey;
+    width: 3%;
+    height: 40px;
+}

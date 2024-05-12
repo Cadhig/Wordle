@@ -34,6 +34,7 @@ app.put('/api/guess', async (req, res) => {
 app.post('/api/guess', async (req, res) => {
     if (retrievedWord === null) {
         retrievedWord = await getRandomWord()
+
     }
     let userGuess = req.body.guess
     console.log(userGuess)
