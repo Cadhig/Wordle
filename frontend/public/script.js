@@ -15,7 +15,7 @@ function keyboardClick(el) {
     displayInput()
 }
 
-// upon clicking delete, will pop most recent array item
+// upon clicking delete, will pop most recent array item and remove letter from screen
 function deleteKey() {
     guessArray.pop()
     displayRow.children[guessArray.length].innerHTML = null
@@ -92,13 +92,12 @@ async function checkGuess() {
     /* checks users guess against the real word, applies colored boxes
      to letters in correct positions, and if they are in word */
     for (let i = 0; i < parsedResponse.length; i++) {
-        console.log(parsedResponse[i].isLetterInPosition)
         let currentIndex = parsedResponse[i]
         const currentBox = displayRow.children[i]
-        if (parsedResponse[i].isLetterInWord !== parsedResponse[i].isLetterInPosition) {
+        if (currentIndex.isLetterInWord !== currentIndex.isLetterInPosition) {
             currentBox.setAttribute('class', 'yellowBox')
         }
-        if (parsedResponse[i].isLetterInWord === true && parsedResponse[i].isLetterInPosition === true) {
+        if (currentIndex.isLetterInWord === true && currentIndex.isLetterInPosition === true) {
             currentBox.setAttribute('class', 'greenBox')
         }
 
