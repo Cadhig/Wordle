@@ -86,14 +86,14 @@ async function checkGuess() {
     }
     const win = (currentValue) => currentValue.isLetterInPosition === true
     const winMsg = document.getElementById('winDisplay')
+    if (currentRow === 6) {
+        winMsg.textContent = "YOU LOSE!"
+    }
     if (parsedResponse.every(win)) {
         winMsg.textContent = "YOU WIN!"
     }
     guessArray = []
     currentRow++
-    if (currentRow > 6) {
-        winMsg.textContent = "YOU LOSE"
-    }
     displayRow = document.querySelector(rowArray[currentRow])
 
 }
