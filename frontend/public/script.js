@@ -54,6 +54,7 @@ async function submitGuess() {
     )
     const parsedResponse = await response.json()
     console.log(parsedResponse)
+    checkWordSpelling()
     checkGuess()
 }
 
@@ -72,6 +73,12 @@ async function checkGuess() {
     }
     )
     const parsedResponse = await response.json()
+    const responseDictionary = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${stringifiedArray}`)
+    const parsedDictionary = await responseDictionary.json()
+    const winMsg = document.getElementById('winDisplay')
+    if (parsedDictionary.title === 'No Definitions Found') {
+        return winMsg.textContent = "NOT A REAL WORD!"
+    }
     for (let i = 0; i < parsedResponse.length; i++) {
         console.log(parsedResponse[i].isLetterInPosition)
         let currentIndex = parsedResponse[i]
@@ -84,8 +91,8 @@ async function checkGuess() {
         }
 
     }
+    console.log(parsedResponse)
     const win = (currentValue) => currentValue.isLetterInPosition === true
-    const winMsg = document.getElementById('winDisplay')
     if (currentRow === 6) {
         winMsg.textContent = "YOU LOSE!"
     }
@@ -96,4 +103,7 @@ async function checkGuess() {
     currentRow++
     displayRow = document.querySelector(rowArray[currentRow])
 
+}
+
+async function checkWordSpelling() {
 }
