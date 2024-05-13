@@ -95,10 +95,10 @@ async function checkGuess() {
         let currentIndex = parsedResponse[i]
         const currentBox = displayRow.children[i]
         if (currentIndex.isLetterInWord !== currentIndex.isLetterInPosition) {
-            currentBox.setAttribute('class', 'yellowBox')
+            currentBox.setAttribute('class', 'bg-amber-400 w-[3%] h-11 rounded-md')
         }
         if (currentIndex.isLetterInWord === true && currentIndex.isLetterInPosition === true) {
-            currentBox.setAttribute('class', 'greenBox')
+            currentBox.setAttribute('class', 'bg-green-600 w-[3%] h-11 rounded-md')
         }
 
     }

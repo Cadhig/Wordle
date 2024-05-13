@@ -3,92 +3,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wordle Clone</title>
-    <link rel="stylesheet" href="/styles.css">
     <link href="./output.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>Wordle Clone</h1>
     </header>
-    <div id="content-box" class="bg-yellow-500">
-        <div id="game-box">
-            <div id="game-row-1">
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
+    <div id="content-box" class="flex flex-col items-center ">
+        <div id="game-box" class="w-full">
+            <div id="game-row-1" class="flex justify-center gap-1 mt-1 text-3xl text-center text-white">
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
             </div>
-            <div id="game-row-2">
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
+            <div id="game-row-2" class="flex justify-center gap-1 mt-1 text-3xl text-center text-white">
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
             </div>
-            <div id="game-row-3">
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
+            <div id="game-row-3" class="flex justify-center gap-1 mt-1 text-3xl text-center text-white">
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
             </div>
-            <div id="game-row-4">
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
+            <div id="game-row-4" class="flex justify-center gap-1 mt-1 text-3xl text-center text-white">
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
             </div>
-            <div id="game-row-5">
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
+            <div id="game-row-5" class="flex justify-center gap-1 mt-1 text-3xl text-center text-white">
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
             </div>
-            <div id="game-row-6">
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
-                <div class="guess-box"></div>
+            <div id="game-row-6" class="flex justify-center gap-1 mt-1 text-3xl text-center text-white">
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
+                <div class="bg-gray-500 w-[3%] h-11 rounded-md"></div>
             </div>
         </div>
-        <div id="input-box">
+        <div id="input-box" class="mt-5">
             <div id="keyboard-row-1">
-                <button class="keys" onclick="keyboardClick(this.value)" value="q">Q</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="w">W</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="e">E</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="r">R</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="t">T</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="y">Y</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="u">U</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="i">I</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="o">O</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="p">P</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="q">Q</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="w">W</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="e">E</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="r">R</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="t">T</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="y">Y</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="u">U</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="i">I</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="o">O</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="p">P</button>
             </div>
             <div id="keyboard-row-2">
-                <button class="keys" onclick="keyboardClick(this.value)" value="a">A</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="s">S</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="d">D</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="f">F</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="g">G</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="h">H</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="j">J</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="k">K</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="l">L</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="a">A</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="s">S</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="d">D</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="f">F</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="g">G</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="h">H</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="j">J</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="k">K</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="l">L</button>
             </div>
             <div id="keyboard-row-3">
-                <button class="keys-function enter-btn" value="enter" onclick="submitGuess()">Enter</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="z">Z</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="x">X</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="c">C</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="v">V</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="b">B</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="n">N</button>
-                <button class="keys" onclick="keyboardClick(this.value)" value="m">M</button>
-                <button class="keys-function del-btn" value="delete" onclick="deleteKey()">Del</button>
+                <button class="text-3xl w-16" value="enter" onclick="submitGuess()">Enter</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="z">Z</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="x">X</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="c">C</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="v">V</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="b">B</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="n">N</button>
+                <button class="text-3xl w-8" onclick="keyboardClick(this.value)" value="m">M</button>
+                <button class="text-3xl w-8" value="delete" onclick="deleteKey()">Del</button>
             </div>
             <div id="winDisplay"></div>
         </div>
