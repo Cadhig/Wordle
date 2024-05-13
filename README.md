@@ -16,7 +16,8 @@ The backend expects the body content to be `JSON`
 ```env
 BACKEND="http://127.0.0.1:3000"
 ```
-
+## For Development
+Run `npx tailwindcss -i ./public/input.css -o ./public/output.css --watch`
 ## Play Here:
 https://wordle-frontend.onrender.com
 
@@ -28,3 +29,4 @@ https://wordle-frontend.onrender.com
 [ ] Make keyboard dynamic
 ### backend
 [ ] Make backend word persistent
+
