@@ -1,4 +1,4 @@
-const backEnd = 'http://127.0.0.1:3000'
+
 
 // Variables reused between functions
 let guessArray = []
@@ -46,7 +46,7 @@ async function submitGuess() {
         return
     }
     // fetching real word from backend
-    const response = await fetch(`${backEnd}/api/guess`, {
+    const response = await fetch(`${backend}/api/guess`, {
         method: "post",
         headers: {
             'content-type': 'application/json'
@@ -67,7 +67,7 @@ async function submitGuess() {
 async function checkGuess() {
     const stringifiedArray = guessArray.join("")
     // fetching real word from backend
-    const response = await fetch(`${backEnd}/api/guess`, {
+    const response = await fetch(`${backend}/api/guess`, {
         method: "post",
         headers: {
             'content-type': 'application/json'
