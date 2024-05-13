@@ -12,14 +12,19 @@ The backend expects the body content to be `JSON`
 0. Clone this repo
 1. Run `npm install` in `/frontend` and `/backend`
 2. Run `npm start` in `/frontend` and `/backend`
+3. Create `.env` file in `/frontend/.env` fill with:
+```env
+BACKEND="http://127.0.0.1:3000"
+```
+
+## Play Here:
+https://wordle-frontend.onrender.com
 
 ## TODO
 ### frontend
-[ ] fix the letter guessing
-[ ] update guess button to send a post request to backend
-[ ] write function to check length of input
-[ ] update front end to display correct/incorrect guesses
-[ ] make responsive
+[ ] Make responsive
+[ ] Finish styling
+[ ] Center 'wordle'
+[ ] Make keyboard dynamic
 ### backend
-[ ] check body only has 5 letters, return error if has less or more than 5
-[ ] check guess function that will check guess against correct answer
+[ ] Make backend word persistent
