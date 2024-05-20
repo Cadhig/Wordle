@@ -44,7 +44,6 @@ app.post('/api/guess', async (req, res) => {
         })
     }
     const checkGuessResult = checkLetters(retrievedWord, userGuess)
-    console.log(checkGuessResult)
     res.send(checkGuessResult)
 })
 

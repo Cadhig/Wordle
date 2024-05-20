@@ -58,7 +58,6 @@ async function submitGuess() {
     }
     )
     const parsedResponse = await response.json()
-    console.log(parsedResponse)
     // calling function on submit
     checkGuess()
 }
@@ -102,7 +101,6 @@ async function checkGuess() {
         }
 
     }
-    console.log(parsedResponse)
     // win/loss deciding
     const win = (currentValue) => currentValue.isLetterInPosition === true
     if (currentRow === 6) {
