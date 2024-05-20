@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const port = 3000
@@ -12,23 +13,28 @@ app.use(cors())
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    return res.send('Hello World!')
 })
 
 app.get('/health', (req, res) => {
-    res.send('OK')
+    return res.send('OK')
 })
 
 app.get('/api/guess', async (req, res) => {
+    const enteredPassword = req.headers.password
+    if (enteredPassword !== process.env.PASSWORD) {
+        return res.status(401).send("Unauthorized")
+
+    }
     if (retrievedWord === null) {
         retrievedWord = await getRandomWord()
     }
-    res.send(retrievedWord)
+    return res.send(retrievedWord)
 })
 
 app.put('/api/guess', async (req, res) => {
     retrievedWord = await getRandomWord()
-    res.send(retrievedWord)
+    return res.send(retrievedWord)
 })
 
 app.post('/api/guess', async (req, res) => {
@@ -44,7 +50,7 @@ app.post('/api/guess', async (req, res) => {
         })
     }
     const checkGuessResult = checkLetters(retrievedWord, userGuess)
-    res.send(checkGuessResult)
+    return res.send(checkGuessResult)
 })
 
 app.listen(port, () => {
