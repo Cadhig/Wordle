@@ -5,7 +5,6 @@ let guessArray = []
 let currentRow = 0
 const rowArray = ['#game-row-1', '#game-row-2', '#game-row-3', '#game-row-4', '#game-row-5', '#game-row-6']
 let displayRow = document.querySelector(rowArray[currentRow])
-
 // will push clicked keys to an array
 function keyboardClick(el) {
     if (guessArray.length > 4) {
@@ -28,8 +27,8 @@ function displayInput() {
         const currentBox = displayRow.children[i]
         currentBox.innerHTML = null
         const displayLetter = document.createElement('p')
-        displayLetter.textContent = guessArray[i]
-        displayLetter.setAttribute('class', 'displayLetter')
+        displayLetter.textContent = guessArray[i].toUpperCase()
+        displayLetter.setAttribute('class', 'displayLetter md:text-[60px] md:w-[80px] md:h-[80px] w-12 h-12 font-mono flex flex-col justify-center')
         currentBox.appendChild(displayLetter)
     }
 
@@ -94,10 +93,10 @@ async function checkGuess() {
         let currentIndex = parsedResponse[i]
         const currentBox = displayRow.children[i]
         if (currentIndex.isLetterInWord !== currentIndex.isLetterInPosition) {
-            currentBox.setAttribute('class', 'bg-amber-400 w-[3%] h-11 rounded-md')
+            currentBox.setAttribute('class', 'bg-amber-400 md:w-[80px] md:h-[80px] w-12 h-12 rounded-md')
         }
         if (currentIndex.isLetterInWord === true && currentIndex.isLetterInPosition === true) {
-            currentBox.setAttribute('class', 'bg-green-600 w-[3%] h-11 rounded-md')
+            currentBox.setAttribute('class', 'bg-green-600 md:w-[80px] md:h-[80px] w-12 h-12 rounded-md')
         }
 
     }
