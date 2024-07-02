@@ -1,18 +1,25 @@
 # Wordle
-A remake of the NYT Wordle browser game.
+This project is a remake of the popular NYT Wordle game. Users interact with a virtual keyboard to guess a hidden word, receiving feedback on their guesses in terms of letter correctness and position.
 
-## Description
-This project is a full stack project, It contains both the backend and frontend directories.
-This project uses `nodemon` to keep the servers running and auto-restarting. 
-This project uses `express` to serve frontend and backend.
-This project hosts the frontend/static assets in the `frontend/public` directory
-The backend expects the body content to be `JSON`
+## Features
+- Interactive virtual keyboard for user input
+- Validation of guess length (max 5 characters)
+- Visual feedbback on guess accuracy
+- Dictionary API for word validity
+- Game ending conditions based on the correct guess, or guess limit
 
-## How to run
-0. Clone this repo
-1. Run `npm install` in `/frontend` and `/backend`
-2. Run `npm start` in `/frontend` and `/backend`
-3. Create `.env` file in `/frontend/.env` fill with:
+## Tech Used
+- JavaScript
+- Node.js
+- Express.js
+- Tailwind CSS
+
+# Getting Started
+To run this project locally: <br>
+- Clone this repo
+- Run `npm install` in `/frontend` and `/backend`
+- Run `npm start` in `/frontend` and `/backend`
+- Create `.env` file in `/frontend/.env` fill with:
 ```env
 BACKEND="http://127.0.0.1:3000"
 ```
@@ -20,13 +27,4 @@ BACKEND="http://127.0.0.1:3000"
 Run `npx tailwindcss -i ./public/input.css -o ./public/output.css --watch`
 ## Play Here:
 https://wordle-frontend.onrender.com
-
-## TODO
-### frontend
-[ ] Make responsive
-[ ] Finish styling
-[ ] Center 'wordle'
-[ ] Make keyboard dynamic
-### backend
-[ ] Make backend word persistent
 
