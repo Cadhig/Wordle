@@ -16,7 +16,7 @@ This project is a remake of the popular NYT Wordle game. Users interact with a v
 
 # Getting Started
 To run this project locally: <br>
-- Clone this repo
+- Clone this repository
 - Run `npm install` in `/frontend` and `/backend`
 - Run `npm start` in `/frontend` and `/backend`
 - Create `.env` file in `/frontend/.env` fill with:
